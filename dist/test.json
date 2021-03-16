@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Soalan 1",
+    "questionTitle": "Ini adalah penyata soalan 1",
+    "correctAnswer": true,
+    "answerSelection": [
+      {
+        "name": "Answer 1 A",
+        "score": true
+      },
+      {
+        "name": "Answer 1 B",
+        "score": false
+      }
+    ]
+  }
+]

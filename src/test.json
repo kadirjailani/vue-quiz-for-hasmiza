@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Soalan 1",
+    "questionTitle": "Ini adalah penyata soalan 1",
+    "correctAnswer": true,
+    "answerSelection": [
+      {
+        "name": "Answer 1 A",
+        "score": true
+      },
+      {
+        "name": "Answer 1 B",
+        "score": false
+      }
+    ]
+  },
+  {
+    "title": "Soalan 2",
+    "questionTitle": "Ini adalah penyata soalan 2",
+    "correctAnswer": true,
+    "answerSelection": [
+      {
+        "name": "Answer 2 A",
+        "score": true
+      },
+      {
+        "name": "Answer 2 B",
+        "score": false
+      }
+    ]
+  },
+  {
+    "title": "Soalan 3",
+    "questionTitle": "Ini adalah penyata soalan 3",
+    "correctAnswer": true,
+    "answerSelection": [
+      {
+        "name": "Answer 3 A",
+        "score": true
+      },
+      {
+        "name": "Answer 3 B",
+        "score": false
+      }
+    ]
+  }
+]

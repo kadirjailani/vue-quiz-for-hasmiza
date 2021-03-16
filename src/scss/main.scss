@@ -1,0 +1,48 @@
+/* Reset */
+// @import '_normalize';
+
+/* General Style */
+@import '_variables';
+@import '_typography';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background:white;
+}
+
+/* Custom styles */
+@import '_intro';
+@import '_questions';
+@import '_answer';
+
+.button {
+    padding: 10px 45px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    transition: color 0.25s ease, background-color 0.5s ease;
+
+    &:hover {
+        cursor: pointer;
+        background-color: white;
+        color: black;
+    }
+
+    &.button-alt {
+        color: black;
+        border-color: black;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+}

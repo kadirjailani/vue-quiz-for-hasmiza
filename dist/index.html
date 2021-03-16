@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="description" content="Resplendent Living" />
+    <meta name="author" content="kadir.jailani@vltkl.com" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <title>Brain Development Quiz</title>
+
+    <style>
+      [v-cloak] {
+        visibility: hidden;
+      }
+    </style>
+    <!-- <script src="https://unpkg.com/lodash@4.16.6"></script> -->
+  </head>
+
+  <body>
+    <!-- Questions Template Block -->
+    <div class="question-container" id="quiz">
+      <!-- Introduction -->
+      <section class="intro main-intro" v-if="quizStart" v-cloak>
+        <div class="text-center">
+          <h1 class="title text-white">Brain Development Quiz</h1>
+          <h5 class="subtitle text-white">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+            nam adipisci voluptate exercitationem odio nobis voluptatum nesciunt
+            quas debitis itaque repellendus.
+          </h5>
+          <button class="button" v-on:click.prevent="startQuizAction">
+            Start
+          </button>
+        </div>
+      </section>
+
+      <!-- Question Page -->
+      <section v-else-if="!quizStart && !quizEnd">
+        <!-- <button v-on:click.prevent="timer">Start Time</button>
+        <button v-on:click.prevent="stopClock">Stop Time</button> -->
+
+        <div
+          class="question-block"
+          v-for="(question, questionIndex) in questionList"
+          v-bind:key="question.questionIndex"
+          v-bind:class="{'active' : questionIndex === currentQuestion }"
+          v-cloak
+        >
+          <div class="intro each-question-intro" v-if="startNewQuestion">
+            <div class="text-center">
+              <h1 class="title">Start next question</h1>
+              <h5 class="subtitle">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </h5>
+              <button
+                class="button button-alt"
+                v-on:click.prevent="startNextQuestion(questionIndex)"
+              >
+                Start now
+              </button>
+            </div>
+          </div>
+
+          <div v-else>
+            <div class="question-title">
+              <h1 class="text-center text-white">{{ question.title }}</h1>
+              <h3 class="text-center text-white">
+                {{ question.questionTitle }}
+              </h3>
+            </div>
+
+            <div class="answer-row">
+              <div
+                class="answer-bg"
+                v-for="(answer, answerIndex) in question.answerSelection"
+                v-bind:key="answer.answerIndex"
+              >
+                <button
+                  class="answer-button"
+                  v-on:click.prevent="answerSelected(questionIndex, answer)"
+                >
+                  {{ answer.name }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Result -->
+      <section v-else v-cloak>
+        <div class="result-title text-center">
+          <h1 class="text-white">It's finished!</h1>
+          <!-- <h4>Quiz Start Time: {{ quizStartTime }}</h4> -->
+          <!-- <h4>Quiz End Time: {{ finalAnswers[this.finalAnswers.length - 1].answerTime }}</h4> -->
+          <h2 class="text-white">Quiz duration: {{ timeStartEndDifferent }}</h2>
+
+          <!-- <h5>Correct answer: {{ rightAnswer }}</h5>
+          <h5>percentage: {{ percentageResult }}%</h5> -->
+        </div>
+        <!-- <h6>{{ finalAnswers }}</h6> -->
+
+        <div
+          class="each-answer-card"
+          v-for="(answer, answerIndex) in finalAnswers"
+          v-bind:key="answerIndex"
+        >
+          <h3 class="title">Question: {{ answer.question }}</h3>
+          <h5 class="subtitle">Answer: {{ answer.answer }}</h5>
+          <p>Selected answer: {{ answer.score }}</p>
+          <p>is it correct: {{ answer.questionResult }}</p>
+          <!-- <p>start time: {{ answer.startTimeStamp }}</p>
+          <p>end time: {{ answer.answerTime }}</p> -->
+          <p>Duration: {{ answer.durationTaken }}</p>
+        </div>
+
+        <div class="execute-result">
+          <button class="button button-alt button-save" v-on:click.prevent="saveToCSV">
+            Save result to csv
+          </button>
+          <button class="button button-alt" v-on:click.prevent="resetQuiz">
+            Reset quiz
+          </button>
+        </div>
+      </section>
+    </div>
+  <script type="text/javascript" src="bundle.js"></script></body>
+</html>

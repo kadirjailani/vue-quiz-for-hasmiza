@@ -1,0 +1,198 @@
+/* Question Page Container */
+.question-container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    .question-block {
+        background-color: white;
+        display: none;
+
+        &.active {
+            display: block;
+            animation: fadein 1s;
+            -moz-animation: fadein 1s;
+            /* Firefox */
+            -webkit-animation: fadein 1s;
+            /* Safari and Chrome */
+            -o-animation: fadein 1s;
+            /* Opera */
+        }
+
+        .answer-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 50vh;
+
+            @media only screen and(max-width: $screen-xs-max) {
+                flex-direction: column;
+                flex-wrap: nowrap;
+            }
+        }
+    }
+}
+
+/* Each Answer Block */
+.answer-bg {
+    overflow: hidden;
+    width: percentage(1/2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and(max-width: $screen-xs-max) {
+        width: 100%;
+        height: percentage(1/2);
+    }
+
+    .answer-button {
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 700;
+        border: 2px solid black;
+        padding: 50px;
+        background-color: transparent;
+        border-radius: 5px;
+    }
+
+    // .answer-block {
+    //     position: relative;
+    //     cursor: pointer;
+
+        // .image-block {
+        //     height: 100vh;
+        //     background-size: cover;
+        //     background-repeat: no-repeat;
+        //     background-position: center center;
+        //     -webkit-transition: 0.75s ease;
+        //     transition: 0.75s ease;
+
+        //     @media only screen and(max-width: $screen-sm-min) {
+        //         height: 50vh;
+        //     }
+
+        //     .overlay {
+        //         width: 100%;
+        //         height: 100%;
+        //         position: absolute;
+        //         background-color: black;
+        //         opacity: 0;
+        //         -webkit-transition: 0.75s ease;
+        //         transition: 0.75s ease;
+
+        //         @media only screen and(max-width: $screen-sm-min) {
+        //             opacity: 0.4;
+        //         }
+        //     }
+        // }
+
+        // .title-position {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: flex-end;
+        //     position: relative;
+
+        //     @media only screen and (max-width: $screen-xs-max) {
+        //         position: absolute;
+        //         top: 65%;
+        //         width: 100%;
+        //     }
+
+        //     .title-content {
+        //         height: 150px;
+        //         min-height: 75px;
+        //         color: white;
+        //         position: absolute;
+        //         padding: 0 20px 0 20px;
+        //         margin-bottom: 20px;
+        //         text-align: center;
+        //         font-weight: 700;
+        //         text-shadow: 0px 10px 7px $transparent-dark;
+        //         -webkit-transition: 0.75s ease;
+        //         transition: 0.75s ease;
+
+        //         @media only screen and(min-width: $screen-sm-min) and(max-width: $screen-sm-max) {
+        //             height: 80px;
+        //         }
+
+        //         @media only screen and (min-width: 720px) and (max-width: 990px) {
+        //             margin-bottom: 40px;
+        //             height: 70px;
+        //         }
+
+        //         @media only screen and (max-width: $screen-xs-max) {
+        //             margin-bottom: 0;
+        //             padding: 8px 14px 5px 14px;
+        //             height: 60px;
+        //         }
+
+        //         @media only screen and(max-width: $screen-xxs-max) {
+        //             height: 40px;
+        //         }
+
+        //         h1 {
+        //             margin: 0;
+
+        //             @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        //                 font-size: 40px;
+        //             }
+
+        //             @media only screen and (max-width: $screen-xs-max) {
+        //                 font-size: 28px;
+        //             }
+        //         }
+
+        //     }
+        // }
+    // }
+
+    // &:hover {
+    //     .image-block {
+    //         -moz-transform: scale(1.1);
+    //         -webkit-transform: scale(1.1);
+    //         transform: scale(1.1);
+
+    //         @media only screen and(max-width: $screen-xs-max) {
+    //             -moz-transform: scale(1.0);
+    //             -webkit-transform: scale(1.0);
+    //             transform: scale(1.0);
+    //         }
+
+    //         .overlay {
+    //             opacity: 0.2;
+    //         }
+
+    //         .title-overlay {
+    //             opacity: 0;
+    //         }
+    //     }
+
+    //     .title-position .title-content {
+    //         background-position: 0 100%;
+    //         text-shadow: 0px 8px 4px $transparent-dark;
+    //         -moz-transform: scale(0.97);
+    //         -webkit-transform: scale(0.97);
+    //         transform: scale(0.97);
+
+    //         @media only screen and(max-width: $screen-xs-max) {
+    //             background-position: 0 0;
+    //         }
+        // }
+    // }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.question-title {
+    background: #4e54c8;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8f94fb, #4e54c8);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 5% 10%;
+}
